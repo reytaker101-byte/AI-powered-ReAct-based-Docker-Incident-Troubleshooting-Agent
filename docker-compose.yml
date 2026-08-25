@@ -1,0 +1,15 @@
+services:
+  orders-nginx:
+    container_name: orders-nginx
+    image: nginx:alpine
+    ports:
+      - "8081:80"
+    volumes:
+      - ./nginx/orders.html:/usr/share/nginx/html/index.html:ro
+  payments-nginx:
+    container_name: payments-nginx
+    image: nginx:alpine
+    ports:
+      - "8082:80"
+    volumes:
+      - ./nginx/payments.html:/usr/share/nginx/html/index.html:ro
